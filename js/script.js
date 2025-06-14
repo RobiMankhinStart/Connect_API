@@ -46,6 +46,8 @@ fetch("https://jsonplaceholder.typicode.com/users")
   });
 // search button click function
 searchButton.addEventListener("click", () => {
+  // clearing before showing results
+  userListDiv.innerHTML = "";
   if (!inputSearch.value) {
     errorMessage.innerHTML = "Enter any name";
     allData.map((item) => {
@@ -85,8 +87,6 @@ searchButton.addEventListener("click", () => {
     } else {
       errorMessage.innerHTML = "";
       userListDiv.innerHTML = "";
-
-      console.log(allData);
 
       //....... dom creation
       let singleUser = document.createElement("div");
