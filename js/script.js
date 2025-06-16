@@ -14,7 +14,7 @@ fetch("https://jsonplaceholder.typicode.com/users")
   .then((response) => response.json())
   .then((data) => {
     allData = data;
-
+    console.log(data);
     data.map((item) => {
       //....... dom creation
       let singleUser = document.createElement("div");
@@ -44,10 +44,11 @@ fetch("https://jsonplaceholder.typicode.com/users")
       userListDiv.appendChild(singleUser);
     });
   });
-// search button click function
+// search button click event
 searchButton.addEventListener("click", () => {
-  // clearing before showing results
+  // clearing datas before showing results
   userListDiv.innerHTML = "";
+
   if (!inputSearch.value) {
     errorMessage.innerHTML = "Enter any name";
     allData.map((item) => {
